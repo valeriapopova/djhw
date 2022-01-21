@@ -119,3 +119,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+DATE_INPUT_FORMATS = ['%Y-%m-%d']

@@ -19,16 +19,13 @@ def books_view(request, pub_date=None):
     return render(request, template, context)
 
 
-
-# def pub_date(request):
-#     template = 'books/books_list.html'
-#     sorted_books = Book.objects.order_by('pub_date')
-#
-#     page_number = Book.pub_date
-#     for date in page_number:
-#         paginator = Paginator(sorted_books, 1)
-#         page = paginator.get_page(date)
-#         context = {
-#             'page': page
-#         }
-#         return render(request, template, context)
+def pub_date_pagi(request):
+    template = 'books/books_list.html'
+    sorted_books = Book.objects.filter('pub_date')
+    page_number = Book.pub_date
+    paginator = Paginator(sorted_books, 1)
+    page = paginator.get_page(page_number)
+    context = {
+           'page': page
+        }
+    return render(request, template, context)

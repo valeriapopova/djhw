@@ -12,15 +12,3 @@ def students_list(request):
         }
     return render(request, template, context)
 
-
-# class StudentList(ListView):
-#     model = Student
-#     template = 'school/students_list.html'
-#
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context['object_list'] = Student.objects.order_by('group').prefetch_related('teacher')
-#         return context
-#
-#     def get_queryset(self):
-#         return Student.objects.order_by('group').prefetch_related('teacher')

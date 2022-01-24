@@ -3,7 +3,7 @@ from django.db import models
 
 class Teacher(models.Model):
     name = models.CharField(max_length=30, verbose_name='Имя')
-    subject = models.CharField(max_length=10, verbose_name='Предмет')
+    subject = models.CharField(max_length=25, verbose_name='Предмет')
 
     class Meta:
         verbose_name = 'Учитель'

@@ -19,11 +19,11 @@
         </div>
         <div class="page">
             <h5>
-                {% if page.has_previous %}
-                <a href="/books/{{ page.previous_page_number }}"> &lt {{ page.has_previous }}</a>
+                {% if prev_page_url %}
+                <a href="/books/{{ prev_page_url }}"> &lt {{ prev_page_url }}</a>
                 {% endif %}
-                {% if page.has_next %}
-                 <a href="/books/{{ page.next_page_number }}">{{ page.has_next }} &gt </a>
+                {% if next_page_url %}
+                 <a href="/books/{{ next_page_url }}">{{ next_page_url }} &gt </a>
                 {% endif %}
             </h5>
         </div>

@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 
 
 class Article(models.Model):
@@ -22,6 +23,9 @@ class Tag(models.Model):
     name = models.CharField(max_length=50, verbose_name='Название')
     slug = models.SlugField(max_length=50, unique=True)
 
+    def get_absolute_url(self):
+        return reverse('tag_url', kwargs={'slug': self.slug})
+
     class Meta:
         verbose_name = 'Тег'
         verbose_name_plural = 'Теги'
@@ -38,4 +42,4 @@ class ArticleTag(models.Model):
     class Meta:
         verbose_name = 'Тематика статьи'
         verbose_name_plural = 'Тематики статьи'
-        ordering = ['-is_main', 'tag']
+        ordering = ['-is_main', 'tag__name']

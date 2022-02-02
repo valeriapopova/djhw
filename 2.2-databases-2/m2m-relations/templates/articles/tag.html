@@ -1,0 +1,12 @@
+{% extends "articles/base.html" %}
+
+{% block title %}
+    {{ tag.name }} - {{ block_super }}
+{% endblock %}
+
+{% block content %}
+    <h1 style="color:#191970" class="mb-5"> Статьи с тегом "{{ tag.name|title }}":</h1>
+    {% for post in tag.articles.all %}
+        {{ post }}
+    {% endfor %}
+{% endblock %}

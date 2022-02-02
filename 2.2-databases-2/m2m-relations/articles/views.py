@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from articles.models import Article
+from articles.models import Article, Tag
 
 
 def articles_list(request):
@@ -10,4 +10,13 @@ def articles_list(request):
         'object_list': object_list
     }
 
+    return render(request, template, context)
+
+
+def tag_detail(request, slug):
+    template = 'articles/tag.html'
+    tag = Tag.objects.get(slug__iexact=slug)
+    context = {
+        'tag': tag
+    }
     return render(request, template, context)

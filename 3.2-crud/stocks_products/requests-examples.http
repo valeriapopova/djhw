@@ -89,5 +89,5 @@ Content-Type: application/json
 ###
 
 # поиск складов, где есть определенный продукт
-GET http://localhost:8000/api/v1/stocks/?search=войл
+GET http://localhost:8000/api/v1/stocks/?products=пе
 Content-Type: application/json

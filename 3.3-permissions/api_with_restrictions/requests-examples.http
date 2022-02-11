@@ -11,18 +11,19 @@ Content-Type: application/json
 Authorization: Token f93b7979411f654ef868bf67ec890d0aaeb2b5f0
 
 {
-  "title": "Macbook Air 201"
+  "title": "Macbook Air 2019",
+  "status": "CLOSED"
 }
 
 ###
 
 # попытка поменять объявление
-PATCH http://localhost:8000/api/advertisements/6/
+PATCH http://localhost:8000/api/advertisements/13/
 Content-Type: application/json
 Authorization: Token f93b7979411f654ef868bf67ec890d0aaeb2b5f0
 
 {
-  "title": "Macbook Pro 2012"
+  "status": "DRAFT"
 }
 
 ###
